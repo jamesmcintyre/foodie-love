@@ -1,13 +1,6 @@
-# MEAN Stack Starter
+# Foodie Love
 
-This is a simple template to get started writing MEAN Stack apps.  It includes:
-
-- Express
-- AngularJS
-- Angular UI Router
-- Gulp
-
-More will likely be added in the future.  (you'll have to plug in Mongoose yourself.)
+This is a exercise in mean stock to develop a simple "dating site" for foodies where they are matched by their tastes in cuisine!
 
 To install:
 
