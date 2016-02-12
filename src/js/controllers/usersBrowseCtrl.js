@@ -3,5 +3,11 @@
 var app = angular.module('foodieLove');
 
 app.controller('usersBrowseCtrl', function() {
-  console.log('usersBrowseCtrl');
+
+
+// $scope.userlist = UserDataSvc.browseUsers(currentUser)
+//
+// UserDataSvc.browseUsers(err, currentUser)
+
+
 });
