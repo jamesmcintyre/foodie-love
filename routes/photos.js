@@ -1,0 +1,54 @@
+'use strict';
+
+var express = require('express');
+var router = express.Router();
+
+var Photo = require('../models/photo');
+var multer = require('multer');
+
+var upload = multer({storage: multer.memoryStorage() });
+
+
+
+//---------------GET ROUTES----------------
+
+//GET ALL USER IMAGES
+router.get('/:userId', function(req, res, next) {
+  var userId = req.params.userId;
+  Photo.find({owner: userId}, function(err, photos){
+    if(err) return res.status(400).send(err);
+    //var userId = req.token._id;
+    res.send(photos);
+  })
+});
+
+
+
+//---------------POST ROUTES----------------
+
+//POST NEW PHOTO
+router.post('/', upload.array('photos'), function(req, res, next) {
+  Photo.addPhoto(req, function(err, addedPhotos){
+    res.status(err ? 400 : 200).send(err || addedPhotos);
+  });
+});
+
+
+
+//---------------UPDATE ROUTES----------------
+
+//PUT SHOULD ALLOW -IN MODEL - RETRIEVE VIA ID AND UPDATE VIA MONGOOSE
+
+
+
+//---------------DELETE ROUTES----------------
+
+router.delete('/:photoId', function(req, res, next){
+  Photo.deletePhoto(req.params.photoId, function(err){
+    res.status(err ? 400 : 200).send(err || 'Photo deleted.');
+  });
+});
+
+
+
+module.exports = router;
