@@ -14,11 +14,19 @@
     <h1>Online Dating for Minimalists</h1>
     <h4>UI  &lt;  True Love</h4>
 
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#/login">Login</a></li>
+      <li><a href="/#/register">Register</a></li>
+      <li><a href="/#/user/profile">Profile</a></li>
+      <li><a href="/#/users/browse">Browse</a></li>
+    </ul>
+
     <div ng-if='loginStatus' >
       <button ng-click='logoutUser'>logout</button>
     </div>
 
-    
+
     <ui-view></ui-view>
 
   </body>
