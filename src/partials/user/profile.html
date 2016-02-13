@@ -2,8 +2,57 @@
 <h1>Profile</h1>
 
 
-
-<button ng-click='isLoggedIn()'>test</button>
-
-
 <!-- <h2 ng-if='loginStatus'>The human torch was denied a bank loan.</h2> -->
+
+
+<form>
+  <div class="form-group">
+    <label for="">Your Name</label>
+    <input type="text" ng-model="user.name" class="form-control" id="name" placeholder="(i.e. Jane Smith)">
+  </div>
+  <div class="form-group">
+    <label for="">Country</label>
+    <input type="text" ng-model="user.country" class="form-control" id="country" placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="">State</label>
+    <input type="text" ng-model="user.state" class="form-control" id="state" placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="">City</label>
+    <input type="text" ng-model="user.city" class="form-control" id="city" placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="">Interests</label>
+    <input type="text-area" ng-model="user.tags" class="form-control" id="tags" placeholder="seperate with space">
+  </div>
+
+
+  <h4>Sexual Preference</h4>
+  <div class="radio">
+    <label>
+      <input type="radio" ng-model="user.preference" name="relStatus" id="relStatus1" value="male" checked>
+      Men
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" ng-model="user.preference" name="relStatus" id="relStatus2" value="female" checked>
+      Female
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" ng-model="user.preference" name="relStatus" id="relStatus3" value="other" checked>
+      Other
+    </label>
+  </div>
+
+
+
+
+
+
+
+  <button ng-click="updateProfile(user)" type="submit" class="btn btn-default">Save Profile</button>
+</form>

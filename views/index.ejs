@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Dating for Minimalists</title>
     <link rel='stylesheet' href='/css/style.css' />
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -11,8 +11,14 @@
     <script src="/js/bundle.js"></script>
   </head>
   <body ng-app='foodieLove'>
-    <h1>Angular</h1>
+    <h1>Online Dating for Minimalists</h1>
+    <h4>UI  &lt;  True Love</h4>
 
+    <div ng-if='loginStatus' >
+      <button ng-click='logoutUser'>logout</button>
+    </div>
+
+    
     <ui-view></ui-view>
 
   </body>

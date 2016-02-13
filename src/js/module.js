@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('foodieLove', ['ui.router', 'ngCookies', 'angular-jwt', 'moment']);
+var app = angular.module('foodieLove', ['ui.router', 'ngCookies', 'angular-jwt']);
 
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -15,9 +15,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 
-app.run(function($cookies){
-  //auth.init();
-  var allCookies = $cookies.getAll();
-  console.log(allCookies);
-  console.log('rsdflkjsdoifjwoeifjwo');
-});
+// app.run(function($rootScope, $state, $cookies, AuthSvc){
+//
+//   $rootScope.loginStatus = AuthSvc.isLoggedIn();
+//   console.log('app run: ', $rootScope.loginStatus);
+//
+// });
