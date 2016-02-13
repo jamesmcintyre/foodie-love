@@ -1,6 +1,7 @@
 'use strict';
 
-var app = angular.module('foodieLove', ['ui.router', 'ngCookies']);
+var app = angular.module('foodieLove', ['ui.router', 'ngCookies', 'angular-jwt', 'moment']);
+
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
