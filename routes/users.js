@@ -33,6 +33,20 @@ router.post('/login', function(req, res, next){
 
 
 
+// IS USER LOGGED IN
+
+router.get('/auth', User.isLoggedIn, function(req, res, next){
+  res.send('Valid Login State!');
+});
+
+
+
+
+
+
+
+
+
 //GET USER PROFILE
 
 //TODO WILL HAVE TO DO THIS WITH ANGULAR CLIENT SIDE

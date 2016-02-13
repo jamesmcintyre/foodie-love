@@ -4,6 +4,12 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var rimraf = require('rimraf');
+var ngAnnotate = require('gulp-ng-annotate');
+var uglify = require('gulp-uglify');
+var plumber = require('gulp-plumber');
+var babel = require('gulp-babel');
+var sourcemaps = require('gulp-sourcemaps');
+
 
 var config = {
   paths: {
@@ -33,7 +39,15 @@ gulp.task('clean-html', function(cb) {
 
 gulp.task('js', ['clean-js'], function() {
   return gulp.src(config.paths.js)
+    .pipe(sourcemaps.init())
+    .pipe(plumber())
+    .pipe(ngAnnotate())
+    .pipe(babel({
+      presets: ['es2015']
+    }))
     .pipe(concat('bundle.js'))
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public/js'));
 });
 

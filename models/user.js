@@ -39,8 +39,15 @@ var userSchema = mongoose.Schema({
 });
 
 userSchema.statics.register = function(userObj, cb) {
-  if(!userObj.email || !userObj.password) {
-    return cb('Missing required field (email, password)');
+
+  console.log('userObj: ',userObj)
+
+  if(!userObj.email || !userObj.password || !userObj.password2) {
+    return cb('Missing required field!');
+  }
+
+  if(userObj.password !== userObj.password2){
+    return cb('Passwords do not match!');
   }
 
   ref.createUser(userObj, function(err, userData){
@@ -56,7 +63,7 @@ userSchema.statics.register = function(userObj, cb) {
 
 userSchema.statics.login = function(userObj, cb) {
   if(!userObj.email || !userObj.password) {
-    return cb('Missing required field (email, password)');
+    return cb('Missing required field!');
   }
 
   ref.authWithPassword(userObj, function(err, authData){

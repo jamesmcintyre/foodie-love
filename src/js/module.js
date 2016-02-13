@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('foodieLove', ['ui.router']);
+var app = angular.module('foodieLove', ['ui.router', 'ngCookies']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -11,4 +11,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('browse', { url: '/users/browse', templateUrl: '/partials/users/browse.html', controller: 'usersBrowseCtrl' })
 
   $urlRouterProvider.otherwise('/');
+});
+
+
+app.run(function($cookies){
+  //auth.init();
+  var allCookies = $cookies.getAll();
+  console.log(allCookies);
+  console.log('rsdflkjsdoifjwoeifjwo');
 });

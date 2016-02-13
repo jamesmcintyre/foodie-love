@@ -6,6 +6,8 @@ var uuid = require('node-uuid');
 var aws = require('aws-sdk');
 
 
+
+
 //PULLING IN AWS S3
 var s3 = new aws.S3();
 var Photo;
@@ -15,7 +17,7 @@ var Photo;
 var photoSchema = mongoose.Schema({
   name: { type: String},
   url: {type: String},
-  user: {type: Schema.Types.ObjectId, ref: 'User'}
+  user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 });
 
 
